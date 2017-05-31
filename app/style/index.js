@@ -1,6 +1,8 @@
 /**
  * Created by eicyan on 2017/5/31.
  */
+
+import { StyleSheet } from 'react-native';
 export const StyleConfig = {
     color_white: 'rgba(255, 255, 255, 1)',
 };

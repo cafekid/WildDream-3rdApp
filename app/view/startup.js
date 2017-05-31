@@ -13,6 +13,8 @@ import {
     BackAndroid,
     TouchableOpacity
 } from 'react-native';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 class StartupPage extends Component {
 
@@ -21,7 +23,7 @@ class StartupPage extends Component {
 
     }
 
-    renderTestContent () {
+    render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
@@ -34,14 +36,6 @@ class StartupPage extends Component {
                     Double tap R on your keyboard to reload,{'\n'}
                     Shake or press menu button for dev menu
                 </Text>
-            </View>
-        )
-    }
-
-    render() {
-        return (
-            <View style={styles.container}>
-                { this.renderTestContent() }
             </View>
         );
     }
@@ -66,4 +60,13 @@ const styles = StyleSheet.create({
     },
 });
 
+
 export default StartupPage;
+//export default connect((state, props) => ({
+//    config: state.config
+//}), dispatch => ({
+//    configAction : bindActionCreators(ConfigAction, dispatch),
+//    userAction : bindActionCreators(UserAction, dispatch)
+//}), null, {
+//    withRef: true
+//})(StartupPage);
