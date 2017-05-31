@@ -3,53 +3,26 @@
  */
 import React, { Component } from 'react';
 import {
-    StyleSheet,
-    Text,
-    View
+    View,
+    NetInfo,
+    Navigator
 } from 'react-native';
 import { connect } from 'react-redux';
+import { ComponentStyles } from '../style';
 
-export default class Navigation extends Component {
+class Navigation extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Hello World!~~
-                </Text>
-                <Text style={styles.instructions}>
-                    To get started, edit index.android.js
-                </Text>
-                <Text style={styles.instructions}>
-                    Double tap R on your keyboard to reload,{'\n'}
-                    Shake or press menu button for dev menu
-                </Text>
+            <View style={ ComponentStyles.container }>
+
             </View>
         );
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
-});
-
-//export default connect(state => ({
-//    user: state.user,
-//}), dispatch => ({
-//}), null, {
-//    withRef: true
-//})(Navigation);
+export default connect(state => ({
+    user: state.user,
+}), dispatch => ({
+}), null, {
+    withRef: true
+})(Navigation);
