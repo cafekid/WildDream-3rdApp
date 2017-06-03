@@ -15,6 +15,9 @@ import {
 } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import * as ConfigAction from '../action/config';
+import * as UserAction from '../action/user';
+import ViewPage from '../component/view';
 
 class StartupPage extends Component {
 
@@ -60,13 +63,11 @@ const styles = StyleSheet.create({
     },
 });
 
-
-export default StartupPage;
-//export default connect((state, props) => ({
-//    config: state.config
-//}), dispatch => ({
-//    configAction : bindActionCreators(ConfigAction, dispatch),
-//    userAction : bindActionCreators(UserAction, dispatch)
-//}), null, {
-//    withRef: true
-//})(StartupPage);
+export default connect((state, props) => ({
+    config: state.config
+}), dispatch => ({
+    configAction : bindActionCreators(ConfigAction, dispatch),
+    userAction : bindActionCreators(UserAction, dispatch)
+}), null, {
+    withRef: true
+})(StartupPage);
