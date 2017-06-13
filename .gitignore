@@ -31,7 +31,7 @@ build/
 local.properties
 *.iml
 android/
-!android/app/src/AndroidManifest.xml
+!android/app/src/main/AndroidManifest.xml
 
 # node.js
 #
