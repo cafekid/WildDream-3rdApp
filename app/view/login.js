@@ -7,6 +7,8 @@ import {
     Text,
     StyleSheet,
 } from 'react-native';
+import * as ConfigAction from '../action/config';
+import * as UserAction from '../action/user';
 
 class LoginPage extends Component {
     render() {
@@ -19,8 +21,6 @@ class LoginPage extends Component {
         )
     }
 }
-
-export default LoginPage;
 
 const styles = StyleSheet.create({
     container: {
@@ -40,3 +40,12 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 });
+
+export default connect((state, props) => ({
+
+}), dispatch => ({
+    userAction : bindActionCreators(UserAction, dispatch),
+    configAction : bindActionCreators(ConfigAction, dispatch)
+}), null, {
+    withRef: true
+})(LoginPage);
